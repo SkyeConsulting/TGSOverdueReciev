@@ -1,0 +1,17 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference Uri="../../../sap/zc_overdueacctrbls_cds/$metadata"><edmx:Include Namespace="ZC_OVERDUEACCTRBLS_CDS" Alias="SAP"/></edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="zc_overdueacctrbls_cds_van.v1">
+			<Annotations Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/P_DisplayCurrency"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/P_ExchangeRateType"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/P_NetDueInterval1InDays"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/P_NetDueInterval2InDays"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/P_NetDueInterval3InDays"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/ID"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,340 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://eas-dev.tgsn.org:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZC_OVERDUEACCTRBLS_CDS" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="ZC_OVERDUEACCTRBLSResult" sap:label="Overdue Accounts Receivables Smart Business App" sap:semantics="aggregate"
+				sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:filterable="false" sap:updatable="false" sap:sortable="false"/><Property Name="TotaledProperties" Type="Edm.String" sap:aggregation-role="totaled-properties-list" sap:is-annotation="true"
+					sap:updatable="false" sap:sortable="false"/><Property Name="CreditRiskClass" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="CreditRiskClassName" sap:updatable="false" sap:label="Risk Class" sap:value-list="standard"/><Property Name="CreditRiskClassName" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Risk Class (Description)"/><Property Name="CreditSegment" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="CreditSegmentName" sap:updatable="false" sap:label="Credit Segment" sap:value-list="standard"/><Property Name="CreditSegmentName" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Credit Segment (Description)"/><Property Name="CustomerAccountGroup" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="CustomerAccountGroupName" sap:updatable="false" sap:label="Account group" sap:value-list="standard"/><Property Name="CustomerAccountGroupName" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="Account group (Description)"/><Property Name="AccountingClerk" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:super-ordinate="CompanyCode" sap:text="AccountingClerkName" sap:updatable="false" sap:label="Accounting Clerk" sap:value-list="standard"/><Property Name="AccountingClerkName" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Accounting Clerk (Description)"/><Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="CompanyCodeName" sap:updatable="false" sap:label="Company Code" sap:value-list="standard"/><Property Name="CompanyCodeName" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Company Code (Description)"/><Property Name="CustomerCountry" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="CustomerCountryName" sap:updatable="false" sap:label="Country Key" sap:value-list="standard"/><Property Name="CustomerCountryName" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Country Key (Description)"/><Property Name="GLAccount" Type="Edm.String" MaxLength="15" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="GLAccountLongName" sap:updatable="false" sap:label="G/L Account" sap:value-list="standard"/><Property Name="GLAccountLongName" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="G/L Account (Description)"/><Property Name="SpecialGLCode" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="SpecialGLCodeName" sap:updatable="false" sap:label="Special G/L" sap:value-list="standard"/><Property Name="SpecialGLCodeName" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Special G/L (Description)"/><Property Name="CustomerClassification" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="CustomerClassificationDesc" sap:updatable="false" sap:label="Customer classific." sap:value-list="standard"/><Property Name="CustomerClassificationDesc" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="Customer classific. (Description)"/><Property Name="CustomerRegion" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:super-ordinate="CustomerCountry" sap:text="CustomerRegionName" sap:updatable="false" sap:label="Region" sap:value-list="standard"/><Property Name="CustomerRegionName" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Region (Description)"/><Property Name="Customer" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:creatable="false" sap:text="CustomerName"
+					sap:updatable="false" sap:label="Customer" sap:value-list="standard"/><Property Name="CustomerName" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Customer (Description)"/><Property Name="NetDueIntervalText" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:updatable="false" sap:label="Net Due Interval"/><Property Name="ExchangeRateType" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:updatable="false" sap:label="Exchange Rate Type"/><Property Name="DisplayCurrency" Type="Edm.String" MaxLength="5" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:updatable="false" sap:label="Display Currency" sap:value-list="standard" sap:semantics="currency-code"/><Property Name="ReconciliationAccount" Type="Edm.String" MaxLength="15" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="ReconciliationAccountLongName" sap:updatable="false" sap:label="Recon. Account" sap:value-list="standard"/><Property Name="ReconciliationAccountLongName" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="Recon. Account (Description)"/><Property Name="NumberOfOpenItems" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="NumberOfOpenItems_F" sap:updatable="false" sap:label="Number of Open Items"/><Property Name="NumberOfOpenItems_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Number of Open Items (Formatted)"/><Property Name="AmountInDisplayCurrency" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="AmountInDisplayCurrency_F" sap:unit="DisplayCurrency" sap:updatable="false" sap:label="Amount in Dspl Crcy"/><Property Name="AmountInDisplayCurrency_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="Amount in Dspl Crcy (Formatted)"/><Property Name="TotalOverdueAmtInDspCrcy" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="TotalOverdueAmtInDspCrcy_F" sap:unit="DisplayCurrency" sap:updatable="false" sap:label="Overdue Amount"/><Property Name="TotalOverdueAmtInDspCrcy_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="Overdue Amount (Formatted)"/><Property Name="TotalNotOvrdAmtInDspCrcy" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="TotalNotOvrdAmtInDspCrcy_F" sap:unit="DisplayCurrency" sap:updatable="false" sap:label="Not Overdue Amount"/><Property Name="TotalNotOvrdAmtInDspCrcy_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="Not Overdue Amount (Formatted)"/><Property Name="NetDueIntvl1AmtInDspCrcy" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="NetDueIntvl1AmtInDspCrcy_F" sap:unit="DisplayCurrency" sap:updatable="false" sap:label="Amt 1st Due Period"/><Property Name="NetDueIntvl1AmtInDspCrcy_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="Amt 1st Due Period (Formatted)"/><Property Name="NetDueIntvl2AmtInDspCrcy" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="NetDueIntvl2AmtInDspCrcy_F" sap:unit="DisplayCurrency" sap:updatable="false" sap:label="Amt 2nd Due Period"/><Property Name="NetDueIntvl2AmtInDspCrcy_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="Amt 2nd Due Period (Formatted)"/><Property Name="NetDueIntvl3AmtInDspCrcy" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="NetDueIntvl3AmtInDspCrcy_F" sap:unit="DisplayCurrency" sap:updatable="false" sap:label="Amt 3rd Due Period"/><Property Name="NetDueIntvl3AmtInDspCrcy_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="Amt 3rd Due Period (Formatted)"/><Property Name="NetDueLastIntvlAmtInDspCrcy" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure"
+					sap:creatable="false" sap:filterable="false" sap:text="NetDueLastIntvlAmtInDspCrcy_F" sap:unit="DisplayCurrency" sap:updatable="false"
+					sap:label="Amt Last Due Period"/><Property Name="NetDueLastIntvlAmtInDspCrcy_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="Amt Last Due Period (Formatted)"/><Property Name="OverdueReceivablesRatio" Type="Edm.Decimal" Precision="42" Scale="4" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="OverdueReceivablesRatio_F" sap:unit="OverdueReceivablesRatio_E" sap:updatable="false"
+					sap:label="Overdue Receivables Ratio"/><Property Name="OverdueReceivablesRatio_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="Overdue Receivables Ratio (Formatted)"/><Property Name="OverdueReceivablesRatio_E" Type="Edm.String" MaxLength="11" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="Overdue Receivables Ratio (Unit)"/><NavigationProperty Name="Parameters" Relationship="ZC_OVERDUEACCTRBLS_CDS.ZCOVRDUEACCTRBLSParametersToResult"
+					FromRole="ToRole_ZCOVRDUEACCTRBLSParametersToResult" ToRole="FromRole_ZCOVRDUEACCTRBLSParametersToResult"/></EntityType>
+			<EntityType Name="ZC_OVERDUEACCTRBLSParameters" sap:semantics="parameters" sap:content-version="1">
+				<Key><PropertyRef Name="P_DisplayCurrency"/><PropertyRef Name="P_ExchangeRateType"/><PropertyRef Name="P_NetDueInterval1InDays"/><PropertyRef Name="P_NetDueInterval2InDays"/><PropertyRef Name="P_NetDueInterval3InDays"/></Key><Property Name="P_DisplayCurrency" Type="Edm.String" Nullable="false" DefaultValue="USD" MaxLength="5" sap:parameter="mandatory"
+					sap:text="P_DisplayCurrencyText" sap:label="Display Currency" sap:sortable="false" sap:value-list="standard"/><Property Name="P_DisplayCurrencyText" Type="Edm.String" MaxLength="60" sap:label="Display Currency" sap:sortable="false"/><Property Name="P_ExchangeRateType" Type="Edm.String" Nullable="false" DefaultValue="M" MaxLength="4" sap:parameter="mandatory"
+					sap:text="P_ExchangeRateTypeText" sap:label="Exchange rate type" sap:sortable="false" sap:filterable="false"/><Property Name="P_ExchangeRateTypeText" Type="Edm.String" MaxLength="60" sap:label="Exchange rate type" sap:sortable="false"
+					sap:filterable="false"/><Property Name="P_NetDueInterval1InDays" Type="Edm.String" Nullable="false" DefaultValue="0000000030" MaxLength="11"
+					sap:parameter="mandatory" sap:text="P_NetDueInterval1InDaysText" sap:label="Net Due Interval 1" sap:sortable="false" sap:filterable="false"/><Property Name="P_NetDueInterval1InDaysText" Type="Edm.String" MaxLength="60" sap:label="Net Due Interval 1" sap:sortable="false"
+					sap:filterable="false"/><Property Name="P_NetDueInterval2InDays" Type="Edm.String" Nullable="false" DefaultValue="0000000060" MaxLength="11"
+					sap:parameter="mandatory" sap:text="P_NetDueInterval2InDaysText" sap:label="Net Due Interval 2" sap:sortable="false" sap:filterable="false"/><Property Name="P_NetDueInterval2InDaysText" Type="Edm.String" MaxLength="60" sap:label="Net Due Interval 2" sap:sortable="false"
+					sap:filterable="false"/><Property Name="P_NetDueInterval3InDays" Type="Edm.String" Nullable="false" DefaultValue="0000000090" MaxLength="11"
+					sap:parameter="mandatory" sap:text="P_NetDueInterval3InDaysText" sap:label="Net Due Interval 3" sap:sortable="false" sap:filterable="false"/><Property Name="P_NetDueInterval3InDaysText" Type="Edm.String" MaxLength="60" sap:label="Net Due Interval 3" sap:sortable="false"
+					sap:filterable="false"/><NavigationProperty Name="P_DisplayCurrencyDetails" Relationship="ZC_OVERDUEACCTRBLS_CDS.P_DisplayCurrencyToListOfValues"
+					FromRole="ToRole_P_DisplayCurrencyToListOfValues" ToRole="FromRole_P_DisplayCurrencyToListOfValues"/><NavigationProperty Name="Results" Relationship="ZC_OVERDUEACCTRBLS_CDS.ZCOVRDUEACCTRBLSParametersToResult"
+					FromRole="FromRole_ZCOVRDUEACCTRBLSParametersToResult" ToRole="ToRole_ZCOVRDUEACCTRBLSParametersToResult"/></EntityType>
+			<EntityType Name="P_DisplayCurrency" sap:label="Display Currency" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="P_DisplayCurrency_ID"/></Key><Property Name="P_DisplayCurrency_ID" Type="Edm.String" Nullable="false" MaxLength="5" sap:sortable="false"
+					sap:text="P_DisplayCurrency_TEXT" sap:label="Display Currency" sap:creatable="false" sap:updatable="false"/><Property Name="P_DisplayCurrency_TEXT" Type="Edm.String" sap:sortable="false" sap:label="Display Currency ()" sap:creatable="false"
+					sap:updatable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="CreditRiskClass" sap:label="Risk Class ()" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="CreditRiskClass_ID"/></Key><Property Name="CreditRiskClass_ID" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="CreditRiskClass_TEXT" sap:label="Risk Class"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="CreditRiskClass_TEXT" Type="Edm.String" sap:label="Risk Class ()" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="CreditSegment" sap:label="Credit Segment ()" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="CreditSegment_ID"/></Key><Property Name="CreditSegment_ID" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="CreditSegment_TEXT" sap:label="Credit Segment"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="CreditSegment_TEXT" Type="Edm.String" sap:label="Credit Segment ()" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="CustomerAccountGroup" sap:label="Account group ()" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="CustomerAccountGroup_ID"/></Key><Property Name="CustomerAccountGroup_ID" Type="Edm.String" Nullable="false" MaxLength="4" sap:text="CustomerAccountGroup_TEXT"
+					sap:label="Account group" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="CustomerAccountGroup_TEXT" Type="Edm.String" sap:label="Account group ()" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="AccountingClerk" sap:label="Accounting Clerk ()" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="AccountingClerk_ID"/><PropertyRef Name="CompanyCode"/></Key><Property Name="AccountingClerk_ID" Type="Edm.String" Nullable="false" MaxLength="2" sap:super-ordinate="CompanyCode"
+					sap:text="AccountingClerk_TEXT" sap:label="Accounting Clerk" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="AccountingClerk_TEXT" Type="Edm.String" sap:label="Accounting Clerk ()" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="CompanyCode" Type="Edm.String" Nullable="false" sap:label="Accounting Clerk (CompanyCode)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="CompanyCodeName" Type="Edm.String" sap:label="Company Code (Description) ( )" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="CompanyCode" sap:label="Company Code ()" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="CompanyCode_ID"/></Key><Property Name="CompanyCode_ID" Type="Edm.String" Nullable="false" MaxLength="4" sap:text="CompanyCode_TEXT" sap:label="Company Code"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="CompanyCode_TEXT" Type="Edm.String" sap:label="Company Code ()" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="CustomerCountry" sap:label="Country Key ()" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="CustomerCountry_ID"/></Key><Property Name="CustomerCountry_ID" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="CustomerCountry_TEXT" sap:label="Country Key"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="CustomerCountry_TEXT" Type="Edm.String" sap:label="Country Key ()" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="GLAccount" sap:label="G/L Account ()" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="GLAccount_ID"/></Key><Property Name="GLAccount_ID" Type="Edm.String" Nullable="false" MaxLength="15" sap:text="GLAccount_TEXT" sap:label="G/L Account"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="GLAccount_TEXT" Type="Edm.String" sap:label="G/L Account ()" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="SpecialGLCode" sap:label="Special G/L ()" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="SpecialGLCode_ID"/></Key><Property Name="SpecialGLCode_ID" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="SpecialGLCode_TEXT" sap:label="Special G/L"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="SpecialGLCode_TEXT" Type="Edm.String" sap:label="Special G/L ()" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="CustomerClassification" sap:label="Customer classific. ()" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="CustomerClassification_ID"/></Key><Property Name="CustomerClassification_ID" Type="Edm.String" Nullable="false" MaxLength="2" sap:text="CustomerClassification_TEXT"
+					sap:label="Customer classific." sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="CustomerClassification_TEXT" Type="Edm.String" sap:label="Customer classific. ()" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="CustomerRegion" sap:label="Region ()" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="CustomerRegion_ID"/><PropertyRef Name="CustomerCountry"/></Key><Property Name="CustomerRegion_ID" Type="Edm.String" Nullable="false" MaxLength="3" sap:super-ordinate="CustomerCountry"
+					sap:text="CustomerRegion_TEXT" sap:label="Region" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="CustomerRegion_TEXT" Type="Edm.String" sap:label="Region ()" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="CustomerCountry" Type="Edm.String" Nullable="false" sap:label="Region (CustomerCountry)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="CustomerCountryName" Type="Edm.String" sap:label="Country Key (Description) ( )" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Customer" sap:label="Customer ()" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="Customer_ID"/></Key><Property Name="Customer_ID" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="Customer_TEXT" sap:label="Customer"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Customer_TEXT" Type="Edm.String" sap:label="Customer ()" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="DisplayCurrency" sap:label="Display Currency ()" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="DisplayCurrency_ID"/></Key><Property Name="DisplayCurrency_ID" Type="Edm.String" Nullable="false" MaxLength="5" sap:text="DisplayCurrency_TEXT"
+					sap:label="Display Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="DisplayCurrency_TEXT" Type="Edm.String" sap:label="Display Currency ()" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ReconciliationAccount" sap:label="Recon. Account ()" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="ReconciliationAccount_ID"/></Key><Property Name="ReconciliationAccount_ID" Type="Edm.String" Nullable="false" MaxLength="15" sap:text="ReconciliationAccount_TEXT"
+					sap:label="Recon. Account" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="ReconciliationAccount_TEXT" Type="Edm.String" sap:label="Recon. Account ()" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ODataQueryAdditionalMetadata" sap:content-version="1">
+				<Key><PropertyRef Name="ODataQueryMetadata"/></Key><Property Name="ODataQueryMetadata" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ODataQueryMetadataValue_Current" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ODataQueryMetadataValueAtDefine" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<Association Name="P_DisplayCurrencyToListOfValues" sap:content-version="1"><End Type="ZC_OVERDUEACCTRBLS_CDS.P_DisplayCurrency" Multiplicity="1" Role="FromRole_P_DisplayCurrencyToListOfValues"/><End Type="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSParameters" Multiplicity="*" Role="ToRole_P_DisplayCurrencyToListOfValues"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_P_DisplayCurrencyToListOfValues"><PropertyRef Name="P_DisplayCurrency_ID"/></Principal>
+					<Dependent Role="ToRole_P_DisplayCurrencyToListOfValues"><PropertyRef Name="P_DisplayCurrency"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="ZCOVRDUEACCTRBLSParametersToResult" sap:content-version="1"><End Type="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSParameters" Multiplicity="1" Role="FromRole_ZCOVRDUEACCTRBLSParametersToResult"/><End Type="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult" Multiplicity="*" Role="ToRole_ZCOVRDUEACCTRBLSParametersToResult"/></Association>
+			<EntityContainer Name="ZC_OVERDUEACCTRBLS_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="CreditRiskClass" EntityType="ZC_OVERDUEACCTRBLS_CDS.CreditRiskClass" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="CreditSegment" EntityType="ZC_OVERDUEACCTRBLS_CDS.CreditSegment" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="CustomerAccountGroup" EntityType="ZC_OVERDUEACCTRBLS_CDS.CustomerAccountGroup" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="AccountingClerk" EntityType="ZC_OVERDUEACCTRBLS_CDS.AccountingClerk" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="CompanyCode" EntityType="ZC_OVERDUEACCTRBLS_CDS.CompanyCode" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="CustomerCountry" EntityType="ZC_OVERDUEACCTRBLS_CDS.CustomerCountry" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="GLAccount" EntityType="ZC_OVERDUEACCTRBLS_CDS.GLAccount" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:content-version="1"/><EntitySet Name="SpecialGLCode" EntityType="ZC_OVERDUEACCTRBLS_CDS.SpecialGLCode" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="CustomerClassification" EntityType="ZC_OVERDUEACCTRBLS_CDS.CustomerClassification" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="CustomerRegion" EntityType="ZC_OVERDUEACCTRBLS_CDS.CustomerRegion" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="Customer" EntityType="ZC_OVERDUEACCTRBLS_CDS.Customer" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:content-version="1"/><EntitySet Name="DisplayCurrency" EntityType="ZC_OVERDUEACCTRBLS_CDS.DisplayCurrency" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ReconciliationAccount" EntityType="ZC_OVERDUEACCTRBLS_CDS.ReconciliationAccount" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="AdditionalMetadata" EntityType="ZC_OVERDUEACCTRBLS_CDS.ODataQueryAdditionalMetadata" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZC_OVERDUEACCTRBLSResults" EntityType="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ZC_OVERDUEACCTRBLS" EntityType="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSParameters" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="P_DisplayCurrency" EntityType="ZC_OVERDUEACCTRBLS_CDS.P_DisplayCurrency" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/>
+				<AssociationSet Name="P_DisplayCurrencyToListOfValues_AssocSet" Association="ZC_OVERDUEACCTRBLS_CDS.P_DisplayCurrencyToListOfValues"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="P_DisplayCurrency" Role="FromRole_P_DisplayCurrencyToListOfValues"/><End EntitySet="ZC_OVERDUEACCTRBLS" Role="ToRole_P_DisplayCurrencyToListOfValues"/></AssociationSet>
+				<AssociationSet Name="ZCOVRDUEACCTRBLSParametersToResult_Assoc" Association="ZC_OVERDUEACCTRBLS_CDS.ZCOVRDUEACCTRBLSParametersToResult"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZC_OVERDUEACCTRBLS" Role="FromRole_ZCOVRDUEACCTRBLSParametersToResult"/><End EntitySet="ZC_OVERDUEACCTRBLSResults" Role="ToRole_ZCOVRDUEACCTRBLSParametersToResult"/></AssociationSet>
+			</EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSParameters/P_DisplayCurrency">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Display Currency"/><PropertyValue Property="CollectionPath" String="P_DisplayCurrency"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="P_DisplayCurrency"/><PropertyValue Property="ValueListProperty" String="P_DisplayCurrency_ID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="P_DisplayCurrency_TEXT"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/CreditRiskClass">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Risk Class ( )"/><PropertyValue Property="CollectionPath" String="CreditRiskClass"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="CreditRiskClass"/><PropertyValue Property="ValueListProperty" String="CreditRiskClass_ID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CreditRiskClass_TEXT"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/CreditSegment">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Credit Segment ( )"/><PropertyValue Property="CollectionPath" String="CreditSegment"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="CreditSegment"/><PropertyValue Property="ValueListProperty" String="CreditSegment_ID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CreditSegment_TEXT"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/CustomerAccountGroup">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Account group ( )"/><PropertyValue Property="CollectionPath" String="CustomerAccountGroup"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="CustomerAccountGroup"/><PropertyValue Property="ValueListProperty" String="CustomerAccountGroup_ID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CustomerAccountGroup_TEXT"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/AccountingClerk">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Accounting Clerk ( )"/><PropertyValue Property="CollectionPath" String="AccountingClerk"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="AccountingClerk"/><PropertyValue Property="ValueListProperty" String="AccountingClerk_ID"/></Record>
+								<Record Type="Common.ValueListParameterIn"><PropertyValue Property="LocalDataProperty" PropertyPath="CompanyCode"/><PropertyValue Property="ValueListProperty" String="CompanyCode"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="AccountingClerk_TEXT"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/CompanyCode">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Company Code ( )"/><PropertyValue Property="CollectionPath" String="CompanyCode"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="CompanyCode"/><PropertyValue Property="ValueListProperty" String="CompanyCode_ID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CompanyCode_TEXT"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/CustomerCountry">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Country Key ( )"/><PropertyValue Property="CollectionPath" String="CustomerCountry"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="CustomerCountry"/><PropertyValue Property="ValueListProperty" String="CustomerCountry_ID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CustomerCountry_TEXT"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/GLAccount">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="G/L Account ( )"/><PropertyValue Property="CollectionPath" String="GLAccount"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="GLAccount"/><PropertyValue Property="ValueListProperty" String="GLAccount_ID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="GLAccount_TEXT"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/SpecialGLCode">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Special G/L ( )"/><PropertyValue Property="CollectionPath" String="SpecialGLCode"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="SpecialGLCode"/><PropertyValue Property="ValueListProperty" String="SpecialGLCode_ID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SpecialGLCode_TEXT"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/CustomerClassification">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Customer classific. ( )"/><PropertyValue Property="CollectionPath" String="CustomerClassification"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="CustomerClassification"/><PropertyValue Property="ValueListProperty" String="CustomerClassification_ID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CustomerClassification_TEXT"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/CustomerRegion">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Region ( )"/><PropertyValue Property="CollectionPath" String="CustomerRegion"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="CustomerRegion"/><PropertyValue Property="ValueListProperty" String="CustomerRegion_ID"/></Record>
+								<Record Type="Common.ValueListParameterIn"><PropertyValue Property="LocalDataProperty" PropertyPath="CustomerCountry"/><PropertyValue Property="ValueListProperty" String="CustomerCountry"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CustomerRegion_TEXT"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/Customer">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Customer ( )"/><PropertyValue Property="CollectionPath" String="Customer"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="Customer"/><PropertyValue Property="ValueListProperty" String="Customer_ID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Customer_TEXT"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/DisplayCurrency">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Display Currency ( )"/><PropertyValue Property="CollectionPath" String="DisplayCurrency"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="DisplayCurrency"/><PropertyValue Property="ValueListProperty" String="DisplayCurrency_ID"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZC_OVERDUEACCTRBLS_CDS.ZC_OVERDUEACCTRBLSResult/ReconciliationAccount">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Recon. Account ( )"/><PropertyValue Property="CollectionPath" String="ReconciliationAccount"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="ReconciliationAccount"/><PropertyValue Property="ValueListProperty" String="ReconciliationAccount_ID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ReconciliationAccount_TEXT"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="https://eas-dev.tgsn.org:443/sap/opu/odata/sap/ZC_OVERDUEACCTRBLS_CDS/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="https://eas-dev.tgsn.org:443/sap/opu/odata/sap/ZC_OVERDUEACCTRBLS_CDS/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
